@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+header {
+  background-color: #004d99;
+  color: white;
+  padding: 20px;
+  padding-top: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  position: relative;
+}
+
+.IFMA-Logo {
+  width: 85px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+aside ul {
+  margin-left: -10px;
+  list-style: none;
+  gap: 20px;
+  overflow: hidden;
+  overflow: scroll;
+  height: 29em;
+
+}
+
+nav > ul > li.retornoMenu {
+  position: absolute;
+  left: 9em;
+  padding: 6px;
+  margin-bottom: 7px;
+  
+}
+nav > ul > li.retornoMenu:hover {
+  position: absolute;
+  left: 9em;
+  background-color: #c3d9f371;
+  padding: 6px;
+  border-radius: 3px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+}
+
+.sidebar {
+
+  width: 10px;
+  background-color: #004d99;
+  color: white;
+  padding: 0px 10px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 180px;
+}
+
+.sidebar ul {
+  
+  background-color: #166abe;
+  height: 35em;
+  list-style: none;
+  padding: 0;
+  border-right: 2px solid blue;
+  border-top: 3px solid blue;
+  border-bottom: 2px solid blue;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #003366;
+}
+
+.icon {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.label {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar:hover .label {
+  opacity: 1;
+}
+
+
+aside a:hover {
+  background-color: #c5dbfd;
+}
+
+.content {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.content h1 {
+  margin-bottom: 20px;
+  color: #004d99;
+}
+
+article {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #004d99;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #003366;
+}
+
+footer {
+  background-color: #004d99;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 0px;
+}
