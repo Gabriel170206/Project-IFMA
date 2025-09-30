@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/*Topo da página*/
+header {
+  background-color: #004d99;
+  color: white;
+  padding: 20px 20px 7px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.Logo {
+  width: 75px;
+}
+
+.ShowName_Project {
+  font-size: 22px;
+  text-align: end;
+  position: absolute;
+  left: 16em;
+}
+
+header > nav {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/*Navegação*/
+nav ul {
+  list-style: none;
+  gap: 20px;
+}
+
+nav > ul > li.retornoMenu {
+  position: relative;
+  padding: 6px;
+  margin-bottom: 7px;
+}
+
+nav > ul > li.retornoMenu:hover {
+  background-color: #c3d9f33f;
+  border-radius: 3px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/*Botões de abrir barra laterais no topo da própria barra, abaixo do header */
+.toggle-btn-vertical {
+  position: absolute;
+  top: 116px;
+  z-index: 1000;
+  padding: 8px;
+  background-color: #004d99;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.toggle-btn-vertical:focus {
+  outline: 2px solid #ffc107;
+}
+
+/*Barra esquerda */
+.left-toggle {
+  left: 0;
+  margin-left: 4px;
+}
+
+/*Barra direita */
+.right-toggle {
+  right: 0;
+  margin-right: 4px;
+}
+
+.mb-4 {
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  word-spacing: 0.6px;
+  text-align: center;
+}
+
+/*Layout principal*/
+main {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+/*Sidebar esquerda*/
+.sidebar {
+  width: 180px;
+  background-color: #004d99;
+  color: white;
+  padding: 10px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  align-self: stretch;
+}
+
+.sidebar.hidden {
+  width: 0;
+  padding: 0;
+}
+
+.sidebar.hidden ul {
+  display: none;
+}
+
+.sidebar ul {
+  background-color: #166abe;
+  flex: 1;
+  list-style: none;
+  padding: 10px;
+  border-radius: 7px;
+  margin-left: -10px;
+  overflow-y: auto;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #003366;
+}
+
+.sidebar .toggle-btn {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 12px;
+  z-index: 3;
+}
+
+.sidebar .toggle-btn:focus {
+  outline: 2px solid #ffc107;
+}
+
+/*Sidebar direita*/
+.right-sidebar {
+  position: relative;
+  width: 180px;
+  background-color: #004d99;
+  color: white;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  z-index: 10;
+  height: auto;
+  align-self: stretch;
+}
+
+.right-sidebar ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.right-sidebar li {
+  margin-bottom: 15px;
+}
+
+.right-sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.right-sidebar a:hover {
+  background-color: #003366;
+}
+
+/*Conteúdo principal*/
+.content {
+  flex-grow: 1;
+  min-height: 100%;
+  margin-left: 20px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.content h1 {
+  margin-bottom: 20px;
+  color: #004d99;
+}
+
+article {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+article h2 {
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #004d99;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #003366;
+}
+
+/*Rodapé*/
+footer {
+  background-color: #004d99;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
+/*Texto oculto*/
+.hidden-text {
+  display: none;
+}
+
+.visible-text {
+  display: block;
+}
+
+/*Cronômetro minimalista com botão dinâmico*/
+.cronometro-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: #eef0f300;
+  border: 3px solid #004D99;
+  border-radius: 40px;
+  padding: 4px 12px 10px;
+  margin: 10px 0;
+  color: white;
+  font-size: 1rem;
+  width: fit-content;
+}
+
+#cronometro {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  min-width: 80px;
+  text-align: center;
+}
+
+.cronometro-box button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cronometro-box .btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.cronometro-box .btn-success:hover {
+  background-color: #218838;
+}
+
+.cronometro-box .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cronometro-box .btn-danger:hover {
+  background-color: #c82333;
+}
+
+.cronometro-box .btn-toggle {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.cronometro-box .btn-toggle:hover {
+  background-color: #e0a800;
+}
+
+/*Texto expandível dentro de artigos */
+.texto-expandivel {
+  overflow: hidden;
+}
+
+.texto-expandivel .preview {
+  display: block;
+}
+
+.texto-expandivel .full-text {
+  display: none;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.texto-expandivel.expanded .preview {
+  display: none;
+}
+
+.texto-expandivel.expanded .full-text {
+  display: block;
+}
+
+/*Simbolos*/
+.simbol-home {
+  width: 40px;
+}
