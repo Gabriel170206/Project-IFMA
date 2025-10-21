@@ -1,0 +1,376 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.cabecalho {
+  background-color: #0056AC;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.cabecalho h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cabecalho p {
+  font-size: 1.2rem;
+}
+
+/* Navegação - aplicando o mesmo estilo da página anterior */
+.navegacao {
+  display: flex;
+  position: absolute;
+  top: 2.5em;
+  right: 1em;
+}
+
+/* Estilos para os ícones - aplicando o mesmo estilo da página anterior */
+.avatar_user {
+  position:  relative;
+  left: 2em;
+  width: 2.8em;
+  margin-right: 10px;
+}
+
+.simbol-home {
+  position: relative;
+  left: 7px;
+  bottom: 8px;
+  width: 3.8em;
+  filter: brightness(0) invert(1);
+}
+
+.perfil-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+
+.conteudo {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-usuario h2 {
+  font-size: 2rem;
+  color: #004D99;
+  margin-bottom: 5px;
+}
+
+.info-usuario p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #198754;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.valor-metrica {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #004D99;
+  margin: 15px 0;
+}
+
+.descricao-metrica {
+  color: #666;
+  font-size: 1rem;
+}
+
+.icone-metrica {
+  font-size: 2.5rem;
+  color: #198754;
+  margin-bottom: 15px;
+}
+
+/* Container único para todas as porcentagens */
+.container-porcentagens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+/* Estilos para o gráfico de desempenho */
+.grafico-desempenho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grafico-pizza {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #198754 0% 80%,
+    #e9ecef 80% 100%
+  );
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grafico-pizza::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.porcentagem {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #004D99;
+  z-index: 1;
+}
+
+.legenda-desempenho {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.item-legenda {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.cor-legenda {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+.cor-acertos {
+  background-color: #198754;
+}
+
+.cor-restante {
+  background-color: #e9ecef;
+}
+
+/* Estilos para as barras de progresso dos gêneros */
+.progresso-generos {
+  display: flex;
+  flex-direction: column;
+}
+
+.progresso-generos h3 {
+  color: #004D99;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.lista-progresso {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-progresso {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-genero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome-genero {
+  font-weight: 600;
+  color: #004D99;
+  font-size: 1rem;
+}
+
+.porcentagem-genero {
+  font-weight: bold;
+  color: #198754;
+  font-size: 0.9rem;
+}
+
+.barra-progresso {
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progresso-preenchido {
+  height: 100%;
+  background: linear-gradient(90deg, #198754, #20c997);
+  border-radius: 5px;
+  transition: width 0.8s ease-in-out;
+  position: relative;
+}
+
+.progresso-preenchido::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 15px 15px;
+  animation: moveStripes 2s linear infinite;
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 15px 0;
+  }
+}
+
+.rodape {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Melhorias de responsividade */
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .metricas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .container-porcentagens {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .conteudo {
+    margin: 20px auto;
+  }
+  
+  .navegacao {
+    position: static;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .grafico-pizza {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .grafico-pizza::before {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .info-genero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .porcentagem-genero {
+    align-self: flex-end;
+  }
+}

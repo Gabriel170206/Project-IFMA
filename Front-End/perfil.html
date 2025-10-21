@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil - Gêneros Textuais</title>
+  <link rel="stylesheet" href="CSS/perfil.css">
+  <!-- Adicionando ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <!-- Navegação com botões de perfil e home -->
+    <nav class="navegacao">
+      <!-- Link para perfil no canto superior direito -->
+      <div class="perfil-link">
+        <a href="#" class="perfil-btn">
+          <img src="IMGs/avatar.png" alt="perfil" class="avatar_user">
+        </a>
+      </div>
+      
+      <!-- Link para a página inicial (home) -->
+      <div class="retornoMenu">
+        <a href="index.html" class="perfil-btn">
+          <img src="IMGs/Home.png" alt="menu" class="simbol-home">
+        </a>
+      </div>
+    </nav>
+    
+    <h1>Meu Perfil</h1>
+    <p>Acompanhe seu progresso na leitura</p>
+  </header>
+
+  <main class="conteudo">
+    <section class="perfil-header">
+      <div class="avatar">
+        <img src="IMGs/avatar.png" alt="Avatar do usuário" class="avatar-img">
+      </div>
+      <div class="info-usuario">
+        <h2>Maria Silva</h2>
+        <p>Estudante dedicada aos gêneros textuais</p>
+      </div>
+    </section>
+
+    <section class="metricas">
+      <!-- Card 1: Textos lidos -->
+      <div class="card">
+        <div class="icone-metrica">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <h3>Textos Lidos</h3>
+        <div class="valor-metrica">0</div>
+        <p class="descricao-metrica">Total de textos completados</p>
+      </div>
+
+      <!-- Card 2: Tempo de leitura -->
+      <div class="card">
+        <div class="icone-metrica">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3>Tempo de Leitura</h3>
+        <div class="valor-metrica">0h</div>
+        <p class="descricao-metrica">Tempo total dedicado à leitura</p>
+      </div>
+
+      <!-- Card 3: Gêneros explorados -->
+      <div class="card">
+        <div class="icone-metrica">
+          <i class="fas fa-tags"></i>
+        </div>
+        <h3>Gêneros Explorados</h3>
+        <div class="valor-metrica">0</div>
+        <p class="descricao-metrica">Diferentes gêneros textuais estudados</p>
+      </div>
+    </section>
+
+    <!-- Container único para todas as porcentagens -->
+    <section class="card">
+      <div class="container-porcentagens">
+        <!-- Gráfico de Desempenho -->
+        <div class="grafico-desempenho">
+          <h3>DESEMPENHO</h3>
+          <p style="text-align: center; color: #666; margin-bottom: 20px; font-size: 0.9rem;">
+            Afinidade ao responder questões
+          </p>
+          
+          <div class="grafico-pizza">
+            <div class="porcentagem">80%</div>
+          </div>
+          
+          <div class="legenda-desempenho">
+            <div class="item-legenda">
+              <div class="cor-legenda cor-acertos"></div>
+              <span>Acertos: 80%</span>
+            </div>
+            <div class="item-legenda">
+              <div class="cor-legenda cor-restante"></div>
+              <span>Restante: 20%</span>
+            </div>
+          </div>
+          
+          <p style="text-align: center; margin-top: 15px; color: #198754; font-weight: bold; font-size: 0.9rem;">
+            <i class="fas fa-trophy"></i> Excelente desempenho!
+          </p>
+        </div>
+
+        <!-- Progresso por Gênero Textual -->
+        <div class="progresso-generos">
+          <h3>Progresso por Gênero</h3>
+          <div class="lista-progresso" id="lista-progresso">
+            <!-- Os itens de progresso serão gerados via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2025 Instituto Federal - Campus Itapecuru Mirim</p>
+  </footer>
+
+  <script>
+    // Simulação de dados do usuário (em um sistema real, esses dados viriam de um backend)
+    const dadosUsuario = {
+      nome: "Maria Silva",
+      textosLidos: 24,
+      tempoLeitura: "18h 42min",
+      generosExplorados: 7,
+      desempenho: 80, // Porcentagem de acertos
+      progressoGeneros: [
+        { nome: "Conto", porcentagem: 75, textosLidos: 6 },
+        { nome: "Crônica", porcentagem: 60, textosLidos: 4 },
+        { nome: "Fábula", porcentagem: 90, textosLidos: 3 },
+        { nome: "Artigo de Opinião", porcentagem: 45, textosLidos: 2 },
+        { nome: "Reportagem", porcentagem: 30, textosLidos: 2 },
+        { nome: "Carta Argumentativa", porcentagem: 20, textosLidos: 1 }
+      ],
+      atividades: [
+        { titulo: "Conto: A Cartomante", autor: "Machado de Assis", data: "hoje", tempo: "32 min" },
+        { titulo: "Artigo de Opinião: Redes Sociais", autor: "Autor desconhecido", data: "ontem", tempo: "25 min" },
+        { titulo: "Crônica: O Homem que Sabia Javanês", autor: "Lima Barreto", data: "há 2 dias", tempo: "28 min" },
+        { titulo: "Fábula: A Cigarra e a Formiga", autor: "Esopo", data: "há 3 dias", tempo: "15 min" },
+        { titulo: "Reportagem: Educação no Século XXI", autor: "Revista Veja", data: "há 5 dias", tempo: "42 min" }
+      ]
+    };
+
+    // Função para criar as barras de progresso
+    function criarBarrasProgresso() {
+      const listaProgresso = document.getElementById('lista-progresso');
+      listaProgresso.innerHTML = '';
+
+      dadosUsuario.progressoGeneros.forEach(genero => {
+        const itemProgresso = document.createElement('div');
+        itemProgresso.className = 'item-progresso';
+        
+        itemProgresso.innerHTML = `
+          <div class="info-genero">
+            <span class="nome-genero">${genero.nome}</span>
+            <span class="porcentagem-genero">${genero.porcentagem}%</span>
+          </div>
+          <div class="barra-progresso">
+            <div class="progresso-preenchido" style="width: ${genero.porcentagem}%"></div>
+          </div>
+        `;
+        
+        listaProgresso.appendChild(itemProgresso);
+      });
+    }
+
+    // Função para atualizar os dados na página
+    function atualizarDadosPerfil() {
+      document.querySelector('.info-usuario h2').textContent = dadosUsuario.nome;
+      document.querySelectorAll('.valor-metrica')[0].textContent = dadosUsuario.textosLidos;
+      document.querySelectorAll('.valor-metrica')[1].textContent = dadosUsuario.tempoLeitura;
+      document.querySelectorAll('.valor-metrica')[2].textContent = dadosUsuario.generosExplorados;
+      
+      // Atualizar o gráfico de desempenho
+      const porcentagem = dadosUsuario.desempenho;
+      document.querySelector('.porcentagem').textContent = `${porcentagem}%`;
+      
+      // Atualizar o gradiente do gráfico de pizza
+      const graficoPizza = document.querySelector('.grafico-pizza');
+      graficoPizza.style.background = `conic-gradient(
+        #198754 0% ${porcentagem}%,
+        #e9ecef ${porcentagem}% 100%
+      )`;
+      
+      // Atualizar legenda
+      document.querySelector('.cor-acertos + span').textContent = `Acertos: ${porcentagem}%`;
+      document.querySelector('.cor-restante + span').textContent = `Restante: ${100 - porcentagem}%`;
+
+      // Criar as barras de progresso
+      criarBarrasProgresso();
+    }
+
+    // Chamar a função quando a página carregar
+    document.addEventListener('DOMContentLoaded', atualizarDadosPerfil);
+  </script>
+</body>
+</html>

@@ -15,32 +15,40 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
   color: #333;
   overflow-x: hidden;
 }
 
 /*Topo da página*/
 header {
-  background-color: #004d99;
+  background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
   color: white;
-  padding: 20px 20px 7px;
+  padding: 20px 20px 27px;
   display: flex;
   align-items: center;
   position: relative;
   z-index: 1;
+  height: 7.6em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.Logo {
+.logo {
+
   width: 75px;
+  height: 60px;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+  color: #004d99;
 }
 
 .ShowName_Project {
   font-size: 22px;
   text-align: end;
   position: absolute;
-  left: 16em;
+  left: 18em;
 }
 
 header > nav {
@@ -56,14 +64,15 @@ nav ul {
 }
 
 nav > ul > li.retornoMenu {
-  position: relative;
+  position: absolute;
+  right: 1em;
+  bottom: 3px;
   padding: 6px;
   margin-bottom: 7px;
 }
 
 nav > ul > li.retornoMenu:hover {
-  background-color: #c3d9f33f;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 nav a {
@@ -72,18 +81,143 @@ nav a {
   font-weight: 500;
 }
 
+.avatar_user{
+  width: 2.7em;
+}
+/* Estilos para o link de perfil */
+.perfil-link {
+  position: absolute;
+  top: 2.8em;
+  right: 5em;
+  z-index: 1001;
+}
+
+.perfil-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+
+.perfil-btn i {
+  font-size: 1.2rem;
+}
+
+.perfil-btn span {
+  font-size: 0.9rem;
+}
+
+/* Ajuste no header para acomodar o botão de perfil */
+header {
+  background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+  color: white;
+  padding: 20px 20px 27px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 7.6em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste no posicionamento do logo */
+.logo {
+  width: 75px;
+  height: 60px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #004d99;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 80px; /* Espaço para o botão de perfil */
+}
+
+/* Ajuste no posicionamento do nome do projeto */
+.ShowName_Project {
+  font-size: 22px;
+  text-align: end;
+  position: absolute;
+  left: 18em;
+}
+
+/* Ajuste no botão de toggle da sidebar esquerda */
+.left-toggle {
+  height: 2.5em;
+  left: 0;
+  margin-left: 8px;
+  margin-top: 16px;
+  top: 130px; /* Ajustado para não sobrepor o botão de perfil */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .perfil-link {
+    top: 15px;
+    left: 15px;
+  }
+  
+  .perfil-btn span {
+    display: none; /* Esconde o texto "Perfil" em telas menores */
+  }
+  
+  .logo {
+    margin-left: 60px;
+  }
+  
+  .ShowName_Project {
+    font-size: 18px;
+    left: 12em;
+  }
+  
+  .left-toggle {
+    top: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .perfil-link {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .logo {
+    margin-left: 50px;
+    width: 60px;
+    height: 50px;
+    font-size: 0.8rem;
+  }
+  
+  .ShowName_Project {
+    font-size: 16px;
+    left: 10em;
+  }
+}
 /*Botões de abrir barra laterais no topo da própria barra, abaixo do header */
 .toggle-btn-vertical {
   position: absolute;
   top: 116px;
   z-index: 1000;
-  padding: 8px;
-  background-color: #004d99;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1.2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.toggle-btn-vertical:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-btn-vertical:focus {
@@ -92,14 +226,18 @@ nav a {
 
 /*Barra esquerda */
 .left-toggle {
+  height: 2.5em;
   left: 0;
-  margin-left: 4px;
+  margin-left: 8px;
+  margin-top: 16px;
 }
 
 /*Barra direita */
 .right-toggle {
+  height: 2.5em;
   right: 0;
-  margin-right: 4px;
+  margin-right: 8px;
+  margin-top: 16px;
 }
 
 .mb-4 {
@@ -114,22 +252,27 @@ main {
   flex: 1;
   display: flex;
   align-items: stretch;
+  overflow: auto;
+  min-height: calc(100vh - 12.6em);
 }
 
-/*Sidebar esquerda*/
+/*Sidebar esquerda - AGORA COM MESMA COR DA DIREITA */
 .sidebar {
-  width: 180px;
-  background-color: #004d99;
-  color: white;
-  padding: 10px;
-  transition: width 0.3s ease;
+  width: 220px;
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+  color: #333;
+  padding: 15px;
+  transition: all 0.3s ease;
   overflow: hidden;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: auto;
   align-self: stretch;
+  position: relative;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #bae6fd;
 }
 
 .sidebar.hidden {
@@ -142,83 +285,89 @@ main {
 }
 
 .sidebar ul {
-  background-color: #166abe;
+  background-color: transparent;
   flex: 1;
   list-style: none;
-  padding: 10px;
-  border-radius: 7px;
-  margin-left: -10px;
+  padding: 0;
+  border-radius: 0;
+  margin-left: 0;
   overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+/* Estilização da barra de rolagem */
+.sidebar ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar ul::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.sidebar ul::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.sidebar ul::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .sidebar li {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .sidebar a {
   display: flex;
   align-items: center;
-  color: white;
+  color: #475569;
   text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .sidebar a:hover {
-  background-color: #003366;
+  background-color: #bae6fd;
+  color: #0369a1;
+  transform: translateX(5px);
+}
+
+.sidebar a:active {
+  background-color: #7dd3fc;
 }
 
 .sidebar .toggle-btn {
   align-self: flex-end;
   margin-bottom: 10px;
-  background-color: #003366;
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   padding: 8px 12px;
   z-index: 3;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar .toggle-btn:focus {
   outline: 2px solid #ffc107;
 }
 
-/*Sidebar direita*/
-.right-sidebar {
-  position: relative;
-  width: 180px;
-  background-color: #004d99;
-  color: white;
-  overflow: hidden;
-  transition: width 0.3s ease;
-  z-index: 10;
-  height: auto;
-  align-self: stretch;
-}
-
-.right-sidebar ul {
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-}
-
-.right-sidebar li {
-  margin-bottom: 15px;
-}
-
-.right-sidebar a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-
-.right-sidebar a:hover {
-  background-color: #003366;
+/* Sidebar direita - MESMA COR DA ESQUERDA */
+#rightSidebar {
+  background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-left: 1px solid #bae6fd;
+  border-right: none;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
 }
 
 /*Conteúdo principal*/
@@ -228,76 +377,153 @@ main {
   margin-left: 20px;
   padding: 20px;
   z-index: 1;
+  overflow: auto;
+  background-color: #f8fafc;
 }
 
 .content h1 {
   margin-bottom: 20px;
+  margin-left: 6em;
   color: #004d99;
+  font-weight: 600;
 }
 
+/* ARTICLE COM BARRA DE ROLAGEM */
 article {
+  position: relative;
   background-color: white;
-  padding: 20px;
+  padding: 25px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  border: 1px solid #e2e8f0;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
 }
 
 article h2 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #1e293b;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Container do texto com barra de rolagem */
+.texto-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 15px;
+}
+
+/* Estilização da barra de rolagem do artigo */
+.texto-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.texto-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.texto-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.texto-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* BOTÃO LEIA MAIS/MENOS - TAMANHO REDUZIDO */
+.toggle-text {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #004d99;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  width: auto;
+  font-size: 0.9em;
+}
+
+.toggle-text:hover {
+  background-color: #003366;
 }
 
 .btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #004d99;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
   color: white;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .btn:hover {
-  background-color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.referencia-texto {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 0.85em;
+  color: #64748b;
+  font-style: italic;
+  flex-shrink: 0;
 }
 
 /*Rodapé*/
 footer {
-  background-color: #004d99;
+  height: 5em;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   color: white;
   text-align: center;
   padding: 15px;
   margin-top: auto;
-}
-
-/*Texto oculto*/
-.hidden-text {
-  display: none;
-}
-
-.visible-text {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*Cronômetro minimalista com botão dinâmico*/
 .cronometro-box {
+  position: absolute;
+  right: 7px;
+  top: 0px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  background-color: #eef0f300;
-  border: 3px solid #004D99;
-  border-radius: 40px;
-  padding: 4px 12px 10px;
+  background-color: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px 12px;
   margin: 10px 0;
   color: white;
   font-size: 1rem;
   width: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 2;
 }
 
 #cronometro {
-  color: black;
+  color: #1e293b;
   font-weight: bold;
   font-size: 1.2em;
   min-width: 80px;
@@ -305,44 +531,63 @@ footer {
 }
 
 .cronometro-box button {
-  padding: 6px 12px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .cronometro-box .btn-success {
-  background-color: #28a745;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
 }
 
 .cronometro-box .btn-success:hover {
-  background-color: #218838;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: scale(1.05);
 }
 
 .cronometro-box .btn-danger {
-  background-color: #dc3545;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   color: white;
 }
 
 .cronometro-box .btn-danger:hover {
-  background-color: #c82333;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: scale(1.05);
 }
 
 .cronometro-box .btn-toggle {
-  background-color: #ffc107;
-  color: #212529;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
 }
 
 .cronometro-box .btn-toggle:hover {
-  background-color: #e0a800;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: scale(1.05);
 }
 
 /*Texto expandível dentro de artigos */
 .texto-expandivel {
   overflow: hidden;
+  width: 90%;
+  position: relative;
+  left: 55px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.texto {
+  position: relative;
+  right: 85px;
+  text-align: center;
+  margin-left: 6em;
+  font-size: 20px;
+  color: #475569;
+  line-height: 1.6;
 }
 
 .texto-expandivel .preview {
@@ -353,6 +598,7 @@ footer {
   display: none;
   transition: max-height 0.3s ease;
   overflow: hidden;
+  max-height: none;
 }
 
 .texto-expandivel.expanded .preview {
@@ -361,9 +607,304 @@ footer {
 
 .texto-expandivel.expanded .full-text {
   display: block;
+  overflow: visible;
 }
 
 /*Simbolos*/
 .simbol-home {
-  width: 40px;
+  width: 60px;
+  filter: brightness(0) invert(1);
+}
+
+.Play {
+  width: 15px;
+}
+
+.navegacao-texto {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.btn-voltar {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-voltar:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== ESTILOS DO BOTÃO DINÂMICO ===== */
+
+/* Botão "Começar a ler" - Estado inicial */
+.btn-comecar {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-comecar:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-comecar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão "Próximo texto" - Após o primeiro texto */
+.btn-proximo-estilo {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-proximo-estilo:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-proximo-estilo:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Melhorias para os títulos das sidebars */
+.sidebar-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #0369a1;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  text-align: center;
+  border-bottom: 2px solid #bae6fd;
+  padding-bottom: 10px;
+}
+
+/* Ícones para os itens da sidebar */
+.sidebar .label {
+  margin-left: 10px;
+}
+
+/* ===== ESTILOS DO SISTEMA DE MARCADOR ===== */
+
+/* Estilo para texto marcado */
+.texto-marcado {
+  background-color: #FFEB3B !important;
+  padding: 2px 1px;
+  border-radius: 2px;
+  display: inline;
+  line-height: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+/* Efeito hover suave no texto marcado */
+.texto-marcado:hover {
+  background-color: #FFD54F !important;
+}
+
+/* Estilo do botão de marcador */
+.btn-marcador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estados do botão marcador */
+.btn-marcador.ativo {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Modo Marcar (laranja) */
+.btn-marcador.modo-marcar {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.btn-marcador.modo-marcar:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-marcador.modo-marcar.ativo {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modo Desmarcar (vermelho) */
+.btn-marcador.modo-desmarcar {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.btn-marcador.modo-desmarcar:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-marcador.modo-desmarcar.ativo {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícone do marcador */
+.icon-marcador {
+  font-size: 1.2em;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+/* Animação suave no ícone quando ativo */
+.btn-marcador.ativo .icon-marcador {
+  transform: scale(1.1);
+}
+
+/* Label do botão */
+.btn-marcador .label {
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Estados de foco para acessibilidade */
+.btn-marcador:focus,
+.btn-comecar:focus,
+.btn-proximo-estilo:focus {
+  outline: 3px solid rgba(255, 193, 7, 0.5);
+  outline-offset: 2px;
+}
+
+/* Efeito de transição suave para todas as mudanças de estado */
+.btn-marcador,
+.texto-marcado,
+.icon-marcador,
+.btn-comecar,
+.btn-proximo-estilo {
+  transition: all 0.3s ease;
+}
+
+/* Feedback visual durante interação */
+.btn-marcador:active,
+.btn-comecar:active,
+.btn-proximo-estilo:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Indicador de modo ativo */
+.btn-marcador.ativo::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+}
+
+/* Melhoria na legibilidade do texto */
+.texto {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Dica visual quando o marcador está ativo */
+body.marcador-ativo .texto {
+  cursor: text;
+}
+
+body.marcador-desmarcar-ativo .texto {
+  cursor: pointer;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .btn-marcador {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+  
+  .btn-marcador .label {
+    font-size: 0.85em;
+  }
+  
+  .icon-marcador {
+    font-size: 1.1em;
+    margin-right: 6px;
+  }
+  
+  .btn-comecar,
+  .btn-proximo-estilo {
+    padding: 10px 16px;
+    font-size: 0.9em;
+  }
+  
+  .navegacao-texto {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Estilo para o estado inicial do botão próximo */
+.btn-proximo {
+  /* Estilo base será sobrescrito pelas classes dinâmicas */
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }

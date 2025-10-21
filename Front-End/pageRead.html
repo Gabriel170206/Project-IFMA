@@ -4,33 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Facilita</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="CSS/pageRead.css" />
+  <link rel="stylesheet" href="CSS/pageRead.css">
 </head>
 <body>
   <!--Botoes fixos no topo das laterais-->
   <button id="toggleSidebarExternal" class="toggle-btn-vertical left-toggle">☰</button>
   <button id="toggleSidebarRightExternal" class="toggle-btn-vertical right-toggle">☰</button>
 
-  <header class="bg-success text-white p-3 d-flex align-items-center justify-content-between">
-    <img class="Logo" src="" alt="Logo undefined" style="height: 60px;" />
+  <header>
+    <div class="logo">LOGO not DEF</div> <!-- substituir div por imagem de logo-->
+
     <div class="ShowName_Project">
       <strong>
-        FACILITA LINGUAGEM: Projeto de Inovação <br>
+        FACILITA LINGUAGEM: Projeto de Inovação<br>
         IFMA-Campus Itapecuru Mirim
       </strong>
     </div>
-    <nav>
-      <ul class="nav">
-        <li class="nav-item retornoMenu"><a class="nav-link text-white" href="https://legado.corenpr.gov.br/portal/images/stories/testepdf2.pdf"><img class="simbol-home" src="IMGs/Home.png" alt="Home page"></a></li>
-        
-      </ul>
+
+    <nav class="navegacao">
+      <div class="perfil-link">
+        <a href="perfil.html" class="perfil-btn"><img src="IMGs/avatar.png" alt="Perfil" class="avatar_user"></a>
+      </div>
+      
+        <ul>
+          <li class="retornoMenu">
+            <a href="index.html"><img src="IMGs/Home.png" alt="Retorno ao menu" class="simbol-home"></a>
+          </li>
+        </ul>
     </nav>
   </header>
 
-  <main class="container-fluid flex-grow-1 d-flex">
+  <main>
     <aside class="sidebar hidden" id="leftSidebar">
       <button id="toggleSidebarInternal" class="toggle-btn">⮜</button>
+      <div class="sidebar-title">Gêneros Textuais</div>
       <ul>
         <li><a href="#"><span class="label">Conto</span></a></li>
         <li><a href="#"><span class="label">Crônica</span></a></li>
@@ -39,146 +46,80 @@
         <li><a href="#"><span class="label">Reportagem</span></a></li>
         <li><a href="#"><span class="label">Texto Científico</span></a></li>
         <li><a href="#"><span class="label">Anúncio</span></a></li>
+        <li><a href="#"><span class="label">Poema</span></a></li>
+        <li><a href="#"><span class="label">Carta</span></a></li>
+        <li><a href="#"><span class="label">Diário</span></a></li>
+        <li><a href="#"><span class="label">Biografia</span></a></li>
+        <li><a href="#"><span class="label">Entrevista</span></a></li>
+        <li><a href="#"><span class="label">Manifesto</span></a></li>
+        <li><a href="#"><span class="label">Crítica</span></a></li>
+        <li><a href="#"><span class="label">Resenha</span></a></li>
       </ul>
     </aside>
 
-    <section class="content p-4 flex-grow-1" id="explicacao">
-      <h1 class="mb-4"><strong>Facilitamos sua preparação para a prova de linguagens</strong></h1>
+    <section class="content" id="explicacao">
+      <h1>Facilitamos sua preparação para a prova de linguagens</h1>
 
       <article class="texto-expandivel">
-        <h2>QUESTÃO 09 (ENEM)</h2>
-        <div class="preview">
-          Amiga Helena Sangirardi<br>
-          Conforme um dia prometi<br>
-          Onde, confesso que esqueci<br>
-          E embora — perdoe — tão tarde...
+        <h2>Vamos Começar</h2>
+        
+        <!-- Container do texto com barra de rolagem -->
+        <div class="texto-container">
+          <div class="texto">
+            <div class="preview">
+              
+              <div class="referencia-texto">
+                <small id="referenciaAtual"></small>
+              </div>
+            </div>
+            <div class="full-text">
+              Leia o texto de forma legítima, além disso, <br>
+              poderá usar recursos que auxiliam seu aprendizado<br><br>
+              <i>Boa leitura!</i>
+              <div class="referencia-texto">
+                <small id="referenciaAtualFull"></small>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="full-text">
-          "Amiga Helena Sangirardi<br>
-          Conforme um dia prometi<br>
-          Onde, confesso que esqueci<br>
-          E embora — perdoe — tão tarde<br>
-          (Melhor do que nunca!) este poeta<br>
-          Segundo manda a boa ética<br>
-          Envia-lhe a receita (poética)<br>
-          De sua feijoada completa.<br>
-          [...]<br>
-          Abraça-a, em Brillat-Savarin,<br>
-          O seu Vinicius de Moraes.<br>
-          Disponível em: <a href="http://www.uol.com.br.">www.uol.com.br.</a> Acesso em: 31 out. 2021 (adaptado)."
-        </div>
-        <button class="btn btn-primary toggle-text">Leia mais</button>
 
-        <div class="cronometro-box mt-4">
+        <button class="toggle-text">Leia mais</button>
+
+        <div class="cronometro-box">
           <span id="cronometro">0.000s</span>
-          <button id="btnToggle" class="btn btn-success me-2">Play</button>
-          <button id="btnReset" class="btn btn-danger">Reset</button>
+          <button id="btnToggle" class="btn btn-success me-2" title="Iniciar/Pausar">
+            <span id="playIcon">▶</span>
+          </button>
+          
+          <button id="btnReset" class="btn btn-danger" title="Resetar">
+            ↺
+          </button>
+        </div>
+
+        <div class="navegacao-texto">
+          <button class="btn-voltar">← Voltar texto</button>
+          <button class="btn-proximo">Próximo texto →</button>
         </div>
       </article>
     </section>
 
     <aside class="sidebar hidden" id="rightSidebar">
       <button id="toggleSidebarRightInternal" class="toggle-btn">⮞</button>
-      <ul>
-        <li><a href="#"><span class="label">Recurso1</span></a></li>
-        <li><a href="#"><span class="label">Recurso2</span></a></li>
-        <li><a href="#"><span class="label">Recurso3</span></a></li>
-        <li><a href="#"><span class="label">Recurso4</span></a></li>
-        <li><a href="#"><span class="label">Recurso5</span></a></li>
-      </ul>
+      <div class="sidebar-title">Recursos</div>
+      <button id="btnMarcador" class="btn-marcador" title="Marcar/Desmarcar texto">
+        <span class="icon-marcador">🔖</span>
+        <span class="label">Marcador</span>
+      </button>
+      <!-- Removidos os outros recursos -->
     </aside>
   </main>
 
-  <footer class="bg-dark text-white text-center p-3">
+  <footer>
     <p>&copy; 2025 Instituto Federal - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    //Sidebar esquerda
-    const leftSidebar = document.getElementById('leftSidebar');
-    const toggleInternal = document.getElementById('toggleSidebarInternal');
-    const toggleExternal = document.getElementById('toggleSidebarExternal');
-
-    toggleInternal.addEventListener('click', () => {
-      leftSidebar.classList.add('hidden');
-      toggleExternal.style.display = 'block';
-    });
-
-    toggleExternal.addEventListener('click', () => {
-      leftSidebar.classList.remove('hidden');
-      toggleExternal.style.display = 'none';
-    });
-
-    //Sidebar direita
-    const rightSidebar = document.getElementById('rightSidebar');
-    const toggleRightInternal = document.getElementById('toggleSidebarRightInternal');
-    const toggleRightExternal = document.getElementById('toggleSidebarRightExternal');
-
-    toggleRightInternal.addEventListener('click', () => {
-      rightSidebar.classList.add('hidden');
-      toggleRightExternal.style.display = 'block';
-    });
-
-    toggleRightExternal.addEventListener('click', () => {
-      rightSidebar.classList.remove('hidden');
-      toggleRightExternal.style.display = 'none';
-    });
-
-    //Texto expandível
-    document.querySelectorAll('.toggle-text').forEach(button => {
-      button.addEventListener('click', () => {
-        const article = button.closest('.texto-expandivel');
-        article.classList.toggle('expanded');
-        button.textContent = article.classList.contains('expanded') ? 'Leia menos' : 'Leia mais';
-      });
-    });
-
-    //Cronômetro
-    let tempo = 0;
-    let cronometroAtivo = false;
-    let ultimaAtualizacao = null;
-
-    const cronometro = document.getElementById('cronometro');
-    const btnToggle = document.getElementById('btnToggle');
-    const btnReset = document.getElementById('btnReset');
-
-    function atualizarCronometro() {
-      const agora = performance.now();
-      if (cronometroAtivo && ultimaAtualizacao !== null) {
-        tempo += agora - ultimaAtualizacao;
-      }
-      ultimaAtualizacao = agora;
-      cronometro.textContent = `${(tempo / 1000).toFixed(3)}s`;
-      requestAnimationFrame(atualizarCronometro);
-    }
-
-    btnToggle.addEventListener('click', () => {
-      cronometroAtivo = !cronometroAtivo;
-      if (cronometroAtivo) {
-        ultimaAtualizacao = performance.now();
-        btnToggle.textContent = 'Pause';
-        btnToggle.classList.remove('btn-success');
-        btnToggle.classList.add('btn-toggle');
-      } else {
-        btnToggle.textContent = 'Play';
-        btnToggle.classList.remove('btn-toggle');
-        btnToggle.classList.add('btn-success');
-      }
-    });
-
-    btnReset.addEventListener('click', () => {
-      tempo = 0;
-      cronometroAtivo = false;
-      ultimaAtualizacao = null;
-      cronometro.textContent = '0.000s';
-      btnToggle.textContent = 'Play';
-      btnToggle.classList.remove('btn-toggle');
-      btnToggle.classList.add('btn-success');
-    });
-
-    requestAnimationFrame(atualizarCronometro);
-  </script>
+  <!-- Adicionando Font Awesome para os ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="JS/pageRead.js"></script>
 </body>
 </html>
